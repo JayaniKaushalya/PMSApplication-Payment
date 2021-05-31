@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PMSWebApplication.Models.Totalpayment>
+@{
+    ViewBag.Title = "Totalpayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Totalpayment</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.TaskName)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.TaskStages)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Payment)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Deadline)
+            </th>*@
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectName)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.TaskName)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskStages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payment)
+            </td>
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Deadline)
+                </td>*@
+            @*<td>
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id },new { @class = "btn btn-warning btn-sm" })
+                </td>*@
+        </tr>
+    }
+
+</table>

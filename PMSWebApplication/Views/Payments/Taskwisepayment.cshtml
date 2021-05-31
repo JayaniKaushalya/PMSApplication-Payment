@@ -1,0 +1,89 @@
+﻿@model IEnumerable<PMSWebApplication.Models.Taskwisepayment>
+
+@{
+    ViewBag.Title = "Taskwisepayment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Task Wise Payment</h2>
+
+@using (Html.BeginForm(FormMethod.Get))
+
+
+{
+
+
+    <div class="container">
+        <div class="row" style="margin-bottom:15px">
+           
+        </div>
+
+        <div class="row" style="margin-bottom:15px">
+            <div class="col-xs-6 col-lg-3" style="padding-left:0">
+                @Html.DropDownList("ProjectId", null, "All Projects", htmlAttributes: new { @class = "form-control", @selected = "-1", @id = "pId" })
+
+
+            </div>
+            <div class="">
+                <input class="btn btn-success" type="button" value="Search" onclick="getObjId()" />
+
+            </div>
+
+        </div>
+
+
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TaskStages)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Payment)
+        </th>
+      
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaskStages)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Payment)
+            </td>
+          
+            
+    </tr>
+    }
+
+    </table>
+
+<script>
+    function getObjId() {
+
+        var val = document.getElementById("pId").value;
+        url = '@Url.Action("Taskwisepayment ","Payments" )' + '/';
+        var ul = url.slice(0,25) + '/' + val ;
+
+        window.location.href = ul;
+    }
+</script>
+

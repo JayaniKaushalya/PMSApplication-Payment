@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace PMSWebApplication.Models.DomainModels
 {
@@ -9,13 +10,14 @@ namespace PMSWebApplication.Models.DomainModels
         {
             Payments = new HashSet<Payment>();
             EmployeeAssignments = new HashSet<EmployeeAssignment>();
+           
         }
         public int Id { get; set; }
         public string TaskName { get; set; }
         public int ProjectId { get; set; }
         public virtual Project Project { get; set; }
         public string TaskStatus { get; set; }
-        public string TaskStages { get; set; }
+        public string TaskStages { get;  set; }
         public decimal? TaskWisePayment { get; set; }
         public DateTime? SDate { get; set; }
         public DateTime? Deadline { get; set; }
@@ -26,5 +28,9 @@ namespace PMSWebApplication.Models.DomainModels
         public virtual ICollection<Payment> Payments { get; set; }
         public virtual ICollection<EmployeeAssignment> EmployeeAssignments { get; set; }
 
+      
     }
+   
+
 }
+

@@ -17,7 +17,7 @@ namespace PMSWebApplication.Models.DomainModels
         public ApplicationUser User { get; set; }
         public string FileName { get; set; }
         public string FileType { get; set; }
-        public string Type { get; set; }
+        //public string Type { get; set; }
         public string Description { get; set; }
 
         public virtual ICollection<BugFix> BugFixes { get; set; }

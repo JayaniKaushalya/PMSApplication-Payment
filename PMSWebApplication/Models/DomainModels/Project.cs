@@ -14,6 +14,8 @@ namespace PMSWebApplication.Models.DomainModels
             PriorityLists = new HashSet<PriorityList>();
             Bugfixes = new HashSet<BugFix>();
             Updates = new HashSet<Update>();
+            Payments = new HashSet<Payment>();
+           
         }
         public int Id { get; set; }
         [Required]
@@ -46,6 +48,8 @@ namespace PMSWebApplication.Models.DomainModels
         public virtual ICollection<PriorityList> PriorityLists { get; set; }
         public virtual ICollection<BugFix> Bugfixes { get; set; }
         public virtual ICollection<Update> Updates { get; set; }
+        public virtual ICollection<Payment> Payments { get; set; }
+       
 
     }
 }

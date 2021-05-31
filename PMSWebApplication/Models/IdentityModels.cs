@@ -56,5 +56,8 @@ namespace PMSWebApplication.Models
         public virtual DbSet<DomainModels.Task> Tasks { get; set; }
         public virtual DbSet<Update> Updates { get; set; }
         public virtual DbSet<Verification> Verifications { get; set; }
+       
+
+       
     }
 }
